@@ -8,7 +8,7 @@ Nous avions pour cela le choix entre plusieurs langages de programmation, j'ai d
 Dans un premier temps, je vais détailler les étapes à réaliser pour que mon code soit compilé puis exécuté.
 
 Il faut tout d'abord compiler le code de la classe `HTTPClient.java`.
-Pour cela, il faut se placer dans le dossier du projet puis dans un terminal, taper la commande suivante : 
+Pour cela, il faut se placer dans le dossier __src__ du projet puis dans un terminal, taper la commande suivante : 
 ```bash
 javac HTTPClient.java
 ```

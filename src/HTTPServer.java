@@ -56,7 +56,7 @@ public class HTTPServer {
 
                 // Si la méthode est GET, alors on retourne la page demandé par l'utilisateur
                 if (method.equals("GET")) {
-                    File file = new File("src/" + uri);
+                    File file = new File("." + uri);
                     // On vérifie que la page html existe
                     if (file.exists() && !file.isDirectory()) {
                         BufferedReader fileReader = new BufferedReader(new FileReader(file));
@@ -86,7 +86,7 @@ public class HTTPServer {
                 }
                 // Si la méthode est POST, on retourne la page demandé puis on actualise les informations
                 else if (method.equals("POST")) {
-                    File file = new File("src/" + uri);
+                    File file = new File("." + uri);
                     // On vérifie que la page html existe
                     if (file.exists() && !file.isDirectory()) {
                         StringBuilder body = new StringBuilder();
@@ -95,7 +95,7 @@ public class HTTPServer {
                         String[] values = body.toString().split("&");
                         for (String value : values) {
                             String[] index = value.split("=");
-                            if (index.length == 2 && index[0].equals("name")) {
+                            if (index.length == 2 && index[0].equals("truc")) {
                                 nameValue = URLDecoder.decode(index[1], "UTF-8");
                                 break;
                             }
@@ -105,8 +105,8 @@ public class HTTPServer {
                         StringBuilder fileContent = new StringBuilder();
                         String line;
                         while ((line = fileReader.readLine()) != null) {
-                            if (line.contains("name")) {
-                                line = line.replace("name", nameValue);
+                            if (line.contains("truc")) {
+                                line = line.replace("truc", nameValue);
                             }
                             fileContent.append(line).append("\n");
                         }

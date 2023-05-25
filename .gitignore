@@ -1,2 +1,5 @@
 # Project exclude paths
 /out/
+/src/HTTPClient.class
+/src/HTTPServer$RequeteClient.class
+/src/HTTPServer.class
